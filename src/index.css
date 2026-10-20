@@ -29,9 +29,13 @@
   font-family: "ArmAllegro", serif;
 }
 
+.font-serif {
+  font-family: "Cormorant Garamond", serif;
+}
+
 :root {
   font-family: "Montserrat", sans-serif;
-  color: black;
+  color: #262626;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }

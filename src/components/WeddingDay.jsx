@@ -76,7 +76,7 @@ export default function WeddingDay({ date }) {
       className="overflow-hidden"
     >
       {/* Museum-style calendar */}
-      <section className="px-6 py-20 sm:px-10 sm:py-24" style={{ backgroundImage: `url(${bg})` }}>
+      <section className="px-6 pb-20 sm:px-10 sm:py-24" style={{ backgroundImage: `url(${bg})` }}>
         <div
           className={`mx-auto max-w-md transition-all duration-[1400ms] ease-out motion-reduce:transition-none ${
             isVisible
@@ -136,7 +136,7 @@ export default function WeddingDay({ date }) {
                             isVisible
                               ? "scale-100 opacity-100"
                               : "scale-75 opacity-0"
-                          }`}
+                          } ${isVisible ? "animate-heart-beat" : ""}`}
                           style={{
                             backgroundImage: `url(${heart})`,
                             transitionDelay: "800ms",

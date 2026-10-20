@@ -24,6 +24,8 @@ export default function Gallery() {
   return (
     <section className="bg-no-repeat bg-cover px-6 py-20 sm:px-8 sm:py-24" style={{ backgroundImage: `url(${bg})` }}>
       <div className="mx-auto max-w-2xl">
+        <h2 className="text-[32px] font-heading text-center">Մենք</h2>
+        <div className="w-18 h-[1px] mx-auto bg-black/40 mb-10 mt-2"></div>
 
         <div className="elaris-gallery relative">
           <Swiper

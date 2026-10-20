@@ -52,16 +52,16 @@ export default function RSVP({ weddingId, deadline  }) {
     };
 
   return (
-    <section className="px-8 py-14 sm:px-12 sm:py-20 bg-no-repeat bg-cover" 
+    <section className="px-8 pb-20 pt-10 sm:px-12 sm:py-20 bg-no-repeat bg-cover" 
            style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="mx-auto max-w-xl text-center">
 
-        <h2 className="font-heading text-[28px] italic">
+        <h2 className="font-heading text-[32px] italic">
           Հրավերի պատասխան
         </h2>
 
-        <p className="mx-auto mt-2 max-w-md text-xs leading-6 text-[#77776c]">
+        <p className="mx-auto mt-3 max-w-md text-xs leading-6 text-[#77776c]">
           Խնդրում ենք տեղեկացնել մեզ Ձեր մասնակցության մասին մինչև {deadline}:
         </p>
 
@@ -112,7 +112,7 @@ export default function RSVP({ weddingId, deadline  }) {
                 onClick={() =>
                   setForm((prev) => ({ ...prev, attendance: "no" }))
                 }
-                className={`flex items-center justify-center gap-2 font-armenian rounded-xl border-2 px-5 py-3 text-xs transition-all duration-300 cursor-pointer ${
+                className={`flex items-center justify-center gap-2 font-armenian rounded-xl border-2 px-5 py-3 transition-all duration-300 cursor-pointer ${
                   form.attendance === "no"
                     ? "border-[#262626] bg-[#262626]/20 text-[#262626]"
                     : "border-[#262626]/40 bg-[#262626]/10 text-[#262626] hover:border-[#262626]"

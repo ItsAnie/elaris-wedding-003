@@ -12,22 +12,20 @@ export default function WeddingPlan({ data }) {
   const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef(null);
 
-  useEffect(() => {
+useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current) return;
 
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      const totalHeight = rect.height;
+      // Քանի պիקסել է բաժինը բարձրացել էկրանի վերևի մասի նկատմամբ
+      const scrolled = windowHeight - rect.top;
+      // Ընդհանուր հեռավորությունը, որը պետք է անցնի բաժինը (բաժնի բարձրություն + էկրանի բարձրություն)
+      const total = rect.height + windowHeight;
 
-      // Շարժումը սկսվում է, երբ բաժնի վերևը հասնում է էկրանի ներքևին
-      const start = windowHeight;
-
-      // Շարժումն ավարտվում է, երբ բաժնի ներքևը հասնում է էկրանի վերևին
-      const end = -totalHeight;
-
-      const progress = (start - rect.top) / (start - end);
+      // Հաշվում ենք խիստ 0-ից 1 պրոգրեսը
+      const progress = scrolled / total;
 
       setScrollProgress(Math.max(0, Math.min(1, progress)));
     };
@@ -38,7 +36,7 @@ export default function WeddingPlan({ data }) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0 }
     );
 
     if (sectionRef.current) {
@@ -94,7 +92,6 @@ export default function WeddingPlan({ data }) {
   ];
 
   // Սրտիկը շարժվում է ուղիղ 0%-ից (ամենավերև) մինչև 100% (ամենաներքև)
-  const heartTopPosition = scrollProgress * 100;
   const pathRef = useRef(null);
 
   const [heartPosition, setHeartPosition] = useState({
@@ -116,10 +113,10 @@ export default function WeddingPlan({ data }) {
   }, [scrollProgress]);
 
   return (
-    <section ref={sectionRef} className="relative px-6 py-20 overflow-hidden bg-no-repeat bg-cover" style={{ backgroundImage: `url(${bg})` }}>
+    <section ref={sectionRef} className="relative px-6 pb-20 overflow-hidden bg-no-repeat bg-cover" style={{ backgroundImage: `url(${bg})` }}>
       {/* Բաժնի վերնագիր */}
       <h2
-        className={`mb-10 text-center font-heading text-[32px] transition-all duration-1000 ease-out ${
+        className={`mb-6 text-center font-heading text-[32px] transition-all duration-1000 ease-out ${
           isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
         }`}
       >
@@ -133,7 +130,6 @@ export default function WeddingPlan({ data }) {
             <path ref={pathRef} id="wedding-path" d="M 180 45 C 200 250, 340 300, 340 480 S 60 650, 60 850 S 340 1050, 340 1200 S 60 1400, 60 1550 S 200 1750, 200 1850" stroke="#e0caca" strokeWidth="3" strokeDasharray="8 8" strokeLinecap="round" opacity="0.8"></path>
         </svg>
 
-        {/* Դինամիկ սրտիկ, որը շարժվում է գծի ամենավերևից մինչև ամենաներքև */}
         <div
           className="absolute z-20 pointer-events-none"
           style={{
