@@ -1,0 +1,54 @@
+.envelop-page {
+  position: relative;
+  min-height: 100vh;
+  background: #f5f1e9;
+}
+
+.envelop-hero {
+  position: relative;
+  z-index: 0;
+  min-height: 100vh;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition:
+    opacity 1s ease 0.5s,
+    transform 1s ease 0.5s;
+}
+
+.envelop-hero.hero-opened {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.envelop-cover {
+  pointer-events: none;
+}
+
+.panel-top,
+.panel-bottom {
+  will-change: transform;
+  transition: transform 1.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.panel-top {
+  clip-path: polygon(-120% 0%, 215% 0%, 50% 100%);
+}
+
+.panel-bottom {
+  clip-path: polygon(-120% 0%, 205% 0%, 50% 100%);
+  transform: rotate(180deg) translateY(0);
+}
+
+.envelop-page.opened .panel-top {
+  transform: translateY(-105%);
+}
+
+.envelop-page.opened .panel-bottom {
+  transform: rotate(180deg) translateY(-105%);
+}
+
+.envelop-open-button {
+  transform: translate(-50%, -50%);
+}

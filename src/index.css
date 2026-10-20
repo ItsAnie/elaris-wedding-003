@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@300;400;500&family=Noto+Serif+Armenian:ital,wght@0,400;0,500;1,400;1,500&family=Parisienne&display=swap');
+
+@import "tailwindcss";
+
+/* ArmCoronet font */
+@font-face {
+  font-family: "ArmCoronet";
+  src: url("./assets/fonts/ArmCoronetU.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ArmAllegro";
+  src: url("./assets/fonts/ArmAllegroU.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Invitation headings */
+.font-heading {
+  font-family: "ArmCoronet", serif;
+}
+
+/* Couple names */
+.font-couple-names {
+  font-family: "ArmAllegro", serif;
+}
+
+:root {
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #deddd5;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Armenian serif */
+.font-armenian {
+  font-family: "Noto Serif Armenian", serif;
+}
+
+/* Decorative torn-paper effect */
+
+.torn-top {
+  clip-path: polygon(
+    0 2%,
+    4% 0,
+    8% 1.5%,
+    12% 0,
+    17% 1.5%,
+    22% 0,
+    27% 1.5%,
+    32% 0,
+    38% 1.5%,
+    44% 0,
+    50% 1.5%,
+    56% 0,
+    62% 1.5%,
+    68% 0,
+    74% 1.5%,
+    80% 0,
+    86% 1.5%,
+    92% 0,
+    100% 2%,
+    100% 100%,
+    0 100%
+  );
+}
+
+.torn-bottom {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 98%,
+    96% 100%,
+    92% 98.5%,
+    87% 100%,
+    82% 98.5%,
+    77% 100%,
+    72% 98.5%,
+    66% 100%,
+    60% 98.5%,
+    54% 100%,
+    48% 98.5%,
+    42% 100%,
+    36% 100%,
+    30% 100%,
+    24% 98.5%,
+    18% 100%,
+    12% 98.5%,
+    6% 100%,
+    0 98%
+  );
+}
+
+.wedding-card {
+  box-shadow:
+    0 25px 80px rgba(45, 45, 38, 0.18),
+    0 8px 25px rgba(45, 45, 38, 0.08);
+}

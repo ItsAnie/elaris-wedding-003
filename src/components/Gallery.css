@@ -1,0 +1,19 @@
+.elaris-gallery .swiper-pagination {
+  bottom: -6px;
+}
+
+.elaris-gallery .swiper-pagination-bullet {
+  width: 5px;
+  height: 5px;
+  background: #a99a80;
+  opacity: 0.55;
+  transition: all 0.4s ease;
+}
+
+.elaris-gallery .swiper-pagination-bullet-active {
+  width: 18px;
+  border-radius: 5px;
+  background: #766b56;
+  opacity: 1;
+}
+
